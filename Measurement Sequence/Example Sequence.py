@@ -135,13 +135,7 @@ def Speed_Test(*arg):
     ]
 
     read_instrument = [
-        #"LS372R",
-        #"LS372T",
-        #"SR830_1_Read",
-        #"K2450_1_Gate",
-        #"SIMRead",
         "pyspeedtester",
-        #"intspeedtester"
     ]
 
     # Instrument 1
