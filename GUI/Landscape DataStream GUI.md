@@ -8,6 +8,7 @@
 - Recommended code editor: Visual Studio Code
 
 ## Recommended Python Packages
+
 python -m pip install --upgrade pip
 
 pip install numpy
