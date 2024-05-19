@@ -1,6 +1,10 @@
+# Put this file under the same path of the Landscape DataStream GUI
+# This file decribe the operation to terminate Python sessions using its PID code called by Landscape DataStream Data Acquisition GUI
+# Due to the limitation of os.kill() under win32, this function will terminate the whole session instead of sending a KeyBoardInteruption
+
 import os
 import signal
-import psutil
+import psutil #pip install psutil
 
 def Call():
     returnstr = "Python Session Handler Called"
