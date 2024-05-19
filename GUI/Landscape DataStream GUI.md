@@ -2,6 +2,7 @@
 ## System Requirement
 - Python 3.8.10-32bit
 - LabView Runtime Engine 2024-32bit
+- VISA driver -32bit
 
 ## Recommended Python Packages
 python -m pip install --upgrade pip
