@@ -60,6 +60,7 @@ def ________start_of_instruments________(*args):
     return 0
 
 def pyspeedtester(*args):
+    # instrument_parameters is a list of (string, string) tuples
     instrument_parameters = [
         ("Description", "Python Speed Test"),
         ("Version", "1.0"),
@@ -130,10 +131,12 @@ def Speed_Test(*arg):
         ("Skip Countdown", "True"),
     ]
 
+    # scan_instrument is the name of the Scan Instrument function
     scan_instrument = [
         "pyspeedtester",
     ]
 
+    # read_instrument is the name of the Read Instrument function
     read_instrument = [
         "pyspeedtester",
     ]
