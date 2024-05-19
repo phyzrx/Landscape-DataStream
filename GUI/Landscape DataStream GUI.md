@@ -2,3 +2,42 @@
 ## System Requirement
 - Python 3.8.10-32bit
 - LabView Runtime Engine 2024-32bit
+
+## Recommended Python Packages
+python -m pip install --upgrade pip
+
+pip install numpy
+
+pip install psutil
+
+pip install pandas
+
+pip install pywin32
+
+pip install scipy
+
+pip install matplotlib
+
+pip install pyvisa
+
+pip install pyserial
+
+pip install twisted
+
+pip install h5py
+
+pip install pylabrad
+
+pip install pyqt5
+
+pip install qt5reactor
+
+pip install pyqtgraph
+
+pip install jinja2
+
+pip install pyqt5-tools
+
+pip install npTDMS
+
+pip cache purge
