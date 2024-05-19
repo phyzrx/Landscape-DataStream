@@ -33,7 +33,6 @@ def Stop(pid):
     #os.kill(pid, 2)
     #process = psutil.Process(pid)
     #process.terminate()
-    sleep(600)
     returnstr = "Killed Session PID %g" % (pid)
     print(returnstr)
     return 0
