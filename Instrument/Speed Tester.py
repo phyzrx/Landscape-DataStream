@@ -13,7 +13,7 @@ mode = "Speed Test"
 rampstep = "0.001"
 rampdelay = "0ms"
 readstrs = ["Test 1", "Test 2",]
-debug = True
+debug = False
 
 previous_value = 0
 
@@ -225,7 +225,7 @@ def Read():
         returnstr = "Speed Test Read with error: " + e.__doc__
         print(returnstr)
         returnstr = False
-
+    print(returnstr)
     return returnstr
 
 def Close():
@@ -234,25 +234,29 @@ def Close():
     print(returnstr)
     return returnstr
 
-if __name__ == '__main__':
+def main():
     Initialize()
     Retrieve()
     starttime = datetime.datetime.now()
     itnum = 0
     for sv in array1D(0, 20, 0.1):
         (returnstr, stb, stbtime) = Scan(sv)
+        Write()
+        Read()
         itnum = itnum + 1
         if stb:
             while True:
                 (returnstr, stb, stbtime) = Approach(sv)
+                Write()
+                Read()
                 itnum = itnum + 1
                 if stb:
                     break
         #sleep(0.05)
-        Write()
-        Read()
-        itnum = itnum + 1
-    endtime = datetime.datettime.now()
+    endtime = datetime.datetime.now()
     pasttime = (endtime - starttime).microseconds
-    print("Excecuted %g times using time %gus" % (itnum, pasttime))
+    print("Excecuted %g commands using time %gus, speed %gus/command" % (itnum, pasttime, pasttime/itnum))
     Close()
+
+if __name__ == '__main__':
+    main()
