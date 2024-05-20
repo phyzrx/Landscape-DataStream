@@ -6,13 +6,14 @@ import re
 import pyvisa
 import numpy as np
 import random
+import datetime
 
 address = ""
 mode = "Speed Test"
 rampstep = "0.001"
 rampdelay = "0ms"
 readstrs = ["Test 1", "Test 2",]
-debug = False
+debug = True
 
 previous_value = 0
 
@@ -236,14 +237,22 @@ def Close():
 if __name__ == '__main__':
     Initialize()
     Retrieve()
+    starttime = datetime.datetime.now()
+    itnum = 0
     for sv in array1D(0, 20, 0.1):
         (returnstr, stb, stbtime) = Scan(sv)
+        itnum = itnum + 1
         if stb:
             while True:
                 (returnstr, stb, stbtime) = Approach(sv)
+                itnum = itnum + 1
                 if stb:
                     break
-        sleep(0.05)
+        #sleep(0.05)
         Write()
         Read()
+        itnum = itnum + 1
+    endtime = datetime.datettime.now()
+    pasttime = (endtime - starttime).microseconds
+    print("Excecuted %g times using time %gus" % (itnum, pasttime))
     Close()
