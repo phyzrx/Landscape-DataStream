@@ -46,3 +46,13 @@ pip install pyqt5-tools
 pip install npTDMS
 
 pip cache purge
+
+## What does the Landscape DataStream GUI do
+
+The Landscape DataStream GUI dispatches missions to the internal communication module or externla custom modules.
+
+## Copyright Statement
+
+Landscape DataStream GUI .exe file is a closed source software. The source code will not be provided to any personnel.
+
+Python codes are open source.
