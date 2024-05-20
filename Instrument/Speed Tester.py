@@ -237,7 +237,12 @@ if __name__ == '__main__':
     Initialize()
     Retrieve()
     for sv in array1D(0, 20, 0.1):
-        Scan(sv)
+        (returnstr, stb, stbtime) = Scan(sv)
+        if stb:
+            while True:
+                (returnstr, stb, stbtime) = Approach(sv)
+                if stb:
+                    break
         sleep(0.05)
         Write()
         Read()
